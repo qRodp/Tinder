@@ -1,0 +1,38 @@
+<ion-view view-title="Tinder">
+	<ion-content class="padding">
+
+
+			</br>
+			<div class="row">
+					<button ng-click="home.nope(home.currentIndex, home.currentCardUid)">
+						<img src="../img/bouton-X.png" style="width : 65% ; height : 65%"></img>
+					</button>
+					<button ng-click="home.openModal()">
+						<img src="../img/bouton-info.png" style="width : 75% ; height : 75%"></img>
+					</button>
+					<button ng-click="home.like(home.currentIndex, home.currentCardUid)">
+						<img src="../img/bouton-coeur.png" style="width : 65% ; height : 65%"></img>
+					</button>
+			</div>
+
+
+		<td-cards>
+			
+			<td-card id="td-card" class="card-{{$index}}" ng-repeat="profile in home.profiles" on-swipe-left="home.nope($index, profile.$id)" on-swipe-right="home.like($index, profile.$id)">
+				
+
+				<div class="image">
+					<div class="no-text overlayBox"><div class="noBox boxed">NON</div></div>
+					<img ng-src="{{profile.avatar}}">
+					<div class="yes-text overlayBox"><div class="yesBox boxed">OUI</div></div>
+				</div>
+				<div class="item">
+					<h2>{{profile.first_name}} ({{profile.age}} ans)</h2>
+				</div>
+
+			</td-card>
+
+		</td-cards>
+		
+	</ion-content>
+</ion-view>

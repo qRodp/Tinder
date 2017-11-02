@@ -1,0 +1,35 @@
+<ion-view view-title="Paramètres">
+	<ion-content>
+
+
+<div class="list padding">
+	
+	<div class="item item-divider">Sélectionner la tranche d'âge (de 18 à {{sett.maxAge}} ans)</div>
+
+	<div class="item range range-positive">
+		18<input type="range" name="age" min="18" max="65" value="30" ng-model="sett.maxAge" 
+		on-release="sett.changeMaxAge()">65
+	</div>
+
+	</br>
+
+	<div class="item item-divider">Je souhaite rencontrer des...</div>
+
+	<ion-toggle toggle-class="toggle-balanced"
+	ng-model="sett.men"
+	ng-checked="{{sett.men}}"
+	ng-change="sett.selectMen()">Hommes</ion-toggle>
+	<ion-toggle toggle-class="toggle-balanced" 
+	ng-model="sett.women"
+	ng-checked="{{sett.women}}"
+	ng-change="sett.selectWomen()">Femmes</ion-toggle>
+
+		</br>
+
+	<button class="button button-block button-assertive" 
+	ng-click="sett.logout()">Se déconnecter</button>
+
+</div>
+
+	</ion-content>
+</ion-view>
